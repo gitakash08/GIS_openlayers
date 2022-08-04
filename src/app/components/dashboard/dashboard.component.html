@@ -1,0 +1,171 @@
+<!-- END: Main Menu-->
+<!-- BEGIN: Content-->
+
+<div class="app-content content" style="margin: 30px;">
+    <div class="content-header row">
+    </div>
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <div class="row">
+                <div class="col-xl-12 col-12">
+                    <h1 class="h2" style="font-size:30px; font-family: Arial, Helvetica, sans-serif;">PMKVY Dashboard
+                    </h1>
+                </div>
+                <div class="col-xl-5 col-12">
+                    <div class="pmkv-filter">
+                        <div class="pmkvy-filter-data">
+                            <a href="javascript:void(0);" (click)="onChangePmkvy($event)" dataname="0"
+                                class="active">All Scheme</a>
+                            <a href="javascript:void(0);" (click)="onChangePmkvy($event)" dataname="3">PMKVY
+                                3.0</a>
+                            <a href="javascript:void(0);" (click)="onChangePmkvy($event)" dataname="2">PMKVY
+                                2.0</a>
+                            <a href="javascript:void(0);" (click)="onChangePmkvy($event)" dataname="1">PMKVY
+                                1.0</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-7 col-12">
+                    <div class="sorting">
+                        <div class="sorting-tabs">
+                            <a href="javascript:void(0);" (click)="onChangeScheme($event)" dataname="allschemes"
+                                class="active">All Training Type</a>
+                            <a href="javascript:void(0);" (click)="onChangeScheme($event)" dataname="RPL"
+                                id="rplba">Recognition of Prior Learning</a>
+                            <a href="javascript:void(0);" (click)="onChangeScheme($event)" dataname="STT"
+                                id="sttba">Short Term Training</a>
+                            <a href="javascript:void(0);" (click)="onChangeScheme($event)" dataname="SP"
+                                id="splba">Special Projects</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-3">
+                    <h1 style="float: right;font-family: Arial, Helvetica, sans-serif;top: 10px; cursor: context-menu;" class="h2">{{
+                        this.selStateDistrictName }}</h1>
+
+                </div>
+                <div class="col-xl-6 col-9">
+                    <mat-form-field style="float: right;">
+                        <mat-label>State</mat-label>
+                        <mat-select [(value)]="this.isSelected" (selectionChange)="onChangeState($event.value)">
+                            <mat-option *ngFor="let state of stateDataList" value="{{ state.value }}">{{ state.label }}
+                            </mat-option>
+
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- Candlestick Multi Level Control Chart -->
+
+            <!-- Slaes & Purchase Order -->
+            <div class="row">
+                <div class="col-12 col-xl-3">
+                    <div class="row">
+                        <div class="col-xl-12 col-12">
+                            <div class="intro-content-wrapper card">
+                                <div class="sort-tab" style="padding: 15px 15px 0px 15px;">
+                                    <div class="pmkv-filter">
+                                        <div class="data-box">
+                                            <ul>
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="training-centre"></span>
+                                                    <strong id="enrolled-candidates">{{ this.enrolledCandidates | number
+                                                        }}</strong>
+                                                    Enrolled Candidates
+                                                </a>
+                                                </li>
+
+                                                <li>
+
+                                                    <a style="cursor: context-menu;">
+                                                        <span class="training-partner"></span>
+                                                    <strong id="ongoing-candidates">{{ this.ongoingCandidates | number
+                                                        }}</strong>
+                                                    Ongoing Training
+                                                </a>
+                                                </li>
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="fund"></span>
+                                                    <strong id="trained-candidates">{{ this.trainedCandidates | number
+                                                        }}</strong>
+                                                    Trained Candidates
+                                                </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-12">
+                            <div class="intro-content-wrapper card">
+                                <div class="sort-tab" style="padding: 15px 15px 0px 15px;">
+                                    <div class="pmkv-filter">
+                                        <div class="data-box">
+                                            <ul>
+
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="candidates"></span>
+                                                    <strong id="assessed-candidates">{{ this.assessedCandidates | number
+                                                        }}</strong>
+                                                    Assessed Candidates
+                                                </a>
+                                                </li>
+
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="certified"></span>
+                                                    <strong id="certified-candidates">{{ this.candidatecertified |
+                                                        number }}</strong>
+                                                    Total Certified
+                                                </a>
+                                                </li>
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="total-placed"></span>
+                                                    <strong id="placed-candidates">{{ this.placedCandidates | number
+                                                        }}</strong>
+                                                    Total Placed*
+                                                </a>
+                                                </li>
+                                                <li>
+                                                    <a style="cursor: context-menu;">
+                                                    <span class="placement-percentage"></span>
+                                                    <strong id="candidate-passed">{{ this.candidatePlacementPercentage
+                                                        }}</strong>
+                                                    Placement Percentage*
+                                                </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-9">
+                    <div class="card">
+                        <div class="card-header">
+
+                            <div class="map" id="map">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->

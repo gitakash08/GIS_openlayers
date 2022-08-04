@@ -1,0 +1,53 @@
+<div mat-dialog-header class="training-center-header" style="z-index: 999;">
+  <h1 mat-dialog-title *ngIf="this.Name?.length > 0">
+    {{ this.Name }}
+  </h1>
+  <div class="training-btn">
+    <button class="skill-icon-btn" mat-icon-button>
+      <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+    </button>
+    <a href="#" target="_blank">
+      <button class="skill-icon-btn" mat-icon-button>
+        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      </button>
+    </a>
+    <button class="skill-icon-btn" mat-icon-button>
+      <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+    </button>
+    <button class="skill-icon-close" mat-icon-button (click)="closeDialog()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+</div>
+
+<!-- Training center start-->
+<div class="training-center-detail" style="z-index: 999;">
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12 primary-detail" *ngIf="this.Address?.length > 0">
+        <h5>Address</h5>
+        <p>{{ this.Address }}</p>
+      </div>
+      <div class="col-7 col-md-6 col-lg-6 primary-detail">
+        <h5>Email</h5>
+        <p>{{ this.Email }}</p>
+      </div>
+      <div class="col-5 col-md-6 col-lg-6 primary-detail">
+        <h5>Mobile</h5>
+        <p>{{ this.Mobile }}</p>
+      </div>
+      <div class="col-12">
+        <mat-divider style="margin-bottom: 10px;"></mat-divider>
+      </div>
+      <div class="col-12 primary-detail" *ngIf="this.dataList?.length > 0">
+        <h5 style="padding-bottom: 10px;"> Courses Offered By Training Centers </h5>
+        <div class="col-12 primary-detail1" *ngIf="this.dataList?.length > 0">
+        <mat-chip-list  *ngFor="let get of this.dataList;">
+          <mat-chip> {{ get.course_name }} </mat-chip>
+        </mat-chip-list>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Training center end-->

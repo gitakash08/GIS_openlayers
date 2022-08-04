@@ -1,0 +1,186 @@
+.fullscreen-dialog {
+	max-width: 100% !important;
+  }
+.training-center-detail {
+	
+	.mat-divider {
+		margin-bottom: 16px;
+	}
+
+	.primary-detail {
+		margin-bottom: 12px;
+		h5 {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 600;
+			font-size: var(--font-13);
+			line-height: 140%;
+			margin-bottom: 2px;
+			color: var(--dark-purple);
+		}
+
+		p {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 400;
+			font-size: var(--font-14);
+			line-height: 140%;
+			margin-bottom: 0px;
+			color: var(--black-600);
+		}
+
+		.mat-chip-list-wrapper {
+			margin-top: 16px;
+		}
+
+		.mat-standard-chip {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 400;
+			font-size: var(--font-10);
+			line-height: 140%;
+			text-align: center;
+			text-transform: uppercase;
+			color: var(--black-600);
+			margin: 6px;
+		}
+	}
+	.primary-detail1 {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: -4px;
+		margin-bottom: 12px;
+
+
+		h5 {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 600;
+			font-size: var(--font-13);
+			line-height: 140%;
+			margin-bottom: 2px;
+			color: var(--dark-purple);
+		}
+
+		p {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 400;
+			font-size: var(--font-14);
+			line-height: 140%;
+			margin-bottom: 0px;
+			color: var(--black-600);
+		}
+
+		.mat-chip-list-wrapper {
+			margin-top: 16px;
+		}
+
+		.mat-standard-chip {
+			font-family: var(--acumin-font);
+			font-style: normal;
+			font-weight: 400;
+			font-size: var(--font-10);
+			line-height: 140%;
+			text-align: center;
+			text-transform: uppercase;
+			color: var(--black-600);
+			margin: 6px;
+		}
+	}
+
+	.training-view-detail-slider {
+		.training-center-card {
+			display: flex;
+			align-items: center;
+			// justify-content: space-between;
+
+			img {
+				width: 100px;
+				margin-right: 16px;
+			}
+
+			.card-details {
+				h5 {
+					font-family: var(--acumin-font);
+					font-style: normal;
+					font-weight: 500;
+					font-size: var(--font-14);
+					line-height: 140%;
+					color: var(--black-600);
+					margin-bottom: 4px;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					-webkit-line-clamp: 1;
+					display: -webkit-box;
+				}
+
+				p {
+					font-family: var(--acumin-font);
+					font-style: normal;
+					font-weight: 500;
+					font-size: var(--font-11);
+					line-height: 130%;
+					color: var(--black-600);
+					opacity: 0.8;
+					margin-bottom: 0px;
+					display: flex;
+					align-items: center;
+
+					svg.svg-inline--fa.fa-circle {
+						margin-left: 5px;
+						margin-right: 5px;
+						font-size: 6px;
+					}
+ 
+				}
+			}
+		}
+	}
+}
+
+.training-center-header {
+	position: relative;
+	// display: flex;
+	// align-items: center;
+	// justify-content: space-between;
+	border-bottom: 1px solid var(--border-color);
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+
+	.training-btn {
+		.skill-icon-btn {
+			background-color: var(--orange);
+			color: var(--white);
+			margin: 8px;
+		}
+
+		.skill-icon-close {
+			/* background-color: var(--landing-bg-color); */
+			color: var(--black-600);
+			margin: 8px;
+			position: absolute;
+			right: -28px;
+			top: -28px;
+		}
+	}
+
+	h1 {
+		font-family: var(--acumin-font);
+		font-style: normal;
+		font-weight: 500;
+		font-size: var(--font-20);
+		line-height: 140%;
+		color: var(--black-600);
+		margin-bottom: 16px;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 1;
+		display: -webkit-box;
+		// width: calc(100% - 170px);
+	}
+}

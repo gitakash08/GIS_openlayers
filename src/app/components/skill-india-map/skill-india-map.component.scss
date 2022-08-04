@@ -1,0 +1,614 @@
+.map {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    // cursor: pointer !important;
+
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+.ol-box {
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 2px solid blue;
+}
+
+.ol-mouse-position {
+    top: 8px;
+    right: 8px;
+    position: absolute;
+}
+
+.ol-scale-line {
+    background: rgba(0, 60, 136, 0.3);
+    border-radius: 4px;
+    bottom: 8px;
+    left: 8px;
+    padding: 2px;
+    position: absolute;
+}
+
+.ol-scale-line-inner {
+    border: 1px solid #eee;
+    border-top: none;
+    color: #eee;
+    font-size: 10px;
+    text-align: center;
+    margin: 1px;
+    will-change: contents, width;
+}
+
+.ol-overlay-container {
+    will-change: left, right, top, bottom;
+}
+
+.ol-unsupported {
+    display: none;
+}
+
+.ol-viewport,
+.ol-unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ol-selectable {
+    -webkit-touch-callout: default;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+.ol-grabbing {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+.ol-grab {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+.ol-control {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.ol-control:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.ol-zoom {
+    top: .5em;
+    left: .5em;
+}
+
+.ol-rotate {
+    top: .5em;
+    right: .5em;
+    transition: opacity .25s linear, visibility 0s linear;
+}
+
+.ol-rotate.ol-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s linear, visibility 0s linear .25s;
+}
+
+.ol-zoom-extent {
+    top: 4.643em;
+    left: .5em;
+}
+
+.ol-full-screen {
+    right: .5em;
+    top: .5em;
+}
+
+@media print {
+    .ol-control {
+        display: none;
+    }
+}
+
+.ol-control button {
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: white;
+    font-size: 1.14em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    height: 1.375em;
+    width: 1.375em;
+    line-height: .4em;
+    background-color: rgba(0, 60, 136, 0.5);
+    border: none;
+    border-radius: 2px;
+}
+
+.ol-control button::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
+.ol-zoom-extent button {
+    line-height: 1.4em;
+}
+
+.ol-compass {
+    display: block;
+    font-weight: normal;
+    font-size: 1.2em;
+    will-change: transform;
+}
+
+.ol-touch .ol-control button {
+    font-size: 1.5em;
+}
+
+.ol-touch .ol-zoom-extent {
+    top: 5.5em;
+}
+
+.ol-control button:hover,
+.ol-control button:focus {
+    text-decoration: none;
+    background-color: rgba(0, 60, 136, 0.7);
+}
+
+.ol-zoom .ol-zoom-in {
+    border-radius: 2px 2px 0 0;
+}
+
+.ol-zoom .ol-zoom-out {
+    border-radius: 0 0 2px 2px;
+}
+
+.ol-attribution {
+    text-align: right;
+    bottom: .5em;
+    right: .5em;
+    max-width: calc(100% - 1.3em);
+}
+
+.ol-attribution ul {
+    margin: 0;
+    padding: 0 .5em;
+    font-size: .7rem;
+    line-height: 1.375em;
+    color: #000;
+    text-shadow: 0 0 2px #fff;
+}
+
+.ol-attribution li {
+    display: inline;
+    list-style: none;
+    line-height: inherit;
+}
+
+.ol-attribution li:not(:last-child):after {
+    content: " ";
+}
+
+.ol-attribution img {
+    max-height: 2em;
+    max-width: inherit;
+    vertical-align: middle;
+}
+
+.ol-attribution ul,
+.ol-attribution button {
+    display: inline-block;
+}
+
+.ol-attribution.ol-collapsed ul {
+    display: none;
+}
+
+.ol-attribution.ol-logo-only ul {
+    display: block;
+}
+
+.ol-attribution:not(.ol-collapsed) {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.ol-attribution.ol-uncollapsible {
+    bottom: 0;
+    right: 0;
+    border-radius: 4px 0 0;
+    height: 1.1em;
+    line-height: 1em;
+}
+
+.ol-attribution.ol-logo-only {
+    background: transparent;
+    bottom: .4em;
+    height: 1.1em;
+    line-height: 1em;
+}
+
+.ol-attribution.ol-uncollapsible img {
+    margin-top: -.2em;
+    max-height: 1.6em;
+}
+
+.ol-attribution.ol-logo-only button,
+.ol-attribution.ol-uncollapsible button {
+    display: none;
+}
+
+.ol-zoomslider {
+    top: 4.5em;
+    left: .5em;
+    height: 200px;
+}
+
+.ol-zoomslider button {
+    position: relative;
+    height: 10px;
+}
+
+.ol-touch .ol-zoomslider {
+    top: 5.5em;
+}
+
+.ol-overviewmap {
+    left: 0.5em;
+    bottom: 0.5em;
+}
+
+.ol-overviewmap.ol-uncollapsible {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 4px 0 0;
+}
+
+.ol-overviewmap .ol-overviewmap-map,
+.ol-overviewmap button {
+    display: inline-block;
+}
+
+.ol-overviewmap .ol-overviewmap-map {
+    border: 1px solid #7b98bc;
+    height: 150px;
+    margin: 2px;
+    width: 150px;
+}
+
+.ol-overviewmap:not(.ol-collapsed) button {
+    bottom: 1px;
+    left: 2px;
+    position: absolute;
+}
+
+.ol-overviewmap.ol-collapsed .ol-overviewmap-map,
+.ol-overviewmap.ol-uncollapsible button {
+    display: none;
+}
+
+.ol-overviewmap:not(.ol-collapsed) {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.ol-overviewmap-box {
+    border: 2px dotted rgba(0, 60, 136, 0.7);
+}
+
+.ol-overviewmap .ol-overviewmap-box:hover {
+    cursor: move;
+}
+
+.layer-switcher.shown.ol-control {
+    background-color: transparent;
+}
+
+.layer-switcher.shown.ol-control:hover {
+    background-color: transparent;
+}
+
+.layer-switcher {
+    position: absolute;
+    top: 3.5em;
+    right: 0.5em;
+    text-align: left;
+}
+
+.layer-switcher.shown {
+    bottom: 3em;
+}
+
+.layer-switcher .panel {
+    padding: 0 1em 0 0;
+    margin: 0;
+    border: 4px solid #eee;
+    border-radius: 4px;
+    background-color: white;
+    display: none;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.layer-switcher.shown .panel {
+    display: block;
+}
+
+.layer-switcher button {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAACE1BMVEX///8A//8AgICA//8AVVVAQID///8rVVVJtttgv98nTmJ2xNgkW1ttyNsmWWZmzNZYxM4gWGgeU2JmzNNr0N1Rwc0eU2VXxdEhV2JqytQeVmMhVmNoydUfVGUgVGQfVGQfVmVqy9hqy9dWw9AfVWRpydVry9YhVmMgVGNUw9BrytchVWRexdGw294gVWQgVmUhVWPd4N6HoaZsy9cfVmQgVGRrytZsy9cgVWQgVWMgVWRsy9YfVWNsy9YgVWVty9YgVWVry9UgVWRsy9Zsy9UfVWRsy9YgVWVty9YgVWRty9Vsy9aM09sgVWRTws/AzM0gVWRtzNYgVWRuy9Zsy9cgVWRGcHxty9bb5ORbxdEgVWRty9bn6OZTws9mydRfxtLX3Nva5eRix9NFcXxOd4JPeINQeIMiVmVUws9Vws9Vw9BXw9BYxNBaxNBbxNBcxdJexdElWWgmWmhjyNRlx9IqXGtoipNpytVqytVryNNrytZsjZUuX210k5t1y9R2zNR3y9V4lp57zth9zdaAnKOGoaeK0NiNpquV09mesrag1tuitbmj1tuj19uktrqr2d2svcCu2d2xwMO63N+7x8nA3uDC3uDFz9DK4eHL4eLN4eIyYnDX5OM5Z3Tb397e4uDf4uHf5uXi5ePi5+Xj5+Xk5+Xm5+Xm6OY6aHXQ19fT4+NfhI1Ww89gx9Nhx9Nsy9ZWw9Dpj2abAAAAWnRSTlMAAQICAwQEBgcIDQ0ODhQZGiAiIyYpKywvNTs+QklPUlNUWWJjaGt0dnd+hIWFh4mNjZCSm6CpsbW2t7nDzNDT1dje5efr7PHy9PT29/j4+Pn5+vr8/f39/f6DPtKwAAABTklEQVR4Xr3QVWPbMBSAUTVFZmZmhhSXMjNvkhwqMzMzMzPDeD+xASvObKePPa+ffHVl8PlsnE0+qPpBuQjVJjno6pZpSKXYl7/bZyFaQxhf98hHDKEppwdWIW1frFnrxSOWHFfWesSEWC6R/P4zOFrix3TzDFLlXRTR8c0fEEJ1/itpo7SVO9Jdr1DVxZ0USyjZsEY5vZfiiAC0UoTGOrm9PZLuRl8X+Dq1HQtoFbJZbv61i+Poblh/97TC7n0neCcK0ETNUrz1/xPHf+DNAW9Ac6t8O8WH3Vp98f5lCaYKAOFZMLyHL4Y0fe319idMNgMMp+zWVSybUed/+/h7I4wRAG1W6XDy4XmjR9HnzvDRZXUAYDFOhC1S/Hh+fIXxen+eO+AKqbs+wAo30zDTDvDxKoJN88sjUzDFAvBzEUGFsnADoIvAJzoh2BZ8sner+Ke/vwECuQAAAABJRU5ErkJggg==')/*logo.png*/
+    ;
+    background-repeat: no-repeat;
+    background-position: 2px;
+    background-color: white;
+    border: none;
+}
+
+.layer-switcher.shown button {
+    display: none;
+}
+
+.layer-switcher button:focus,
+.layer-switcher button:hover {
+    background-color: white;
+}
+
+.layer-switcher ul {
+    padding-left: 1em;
+    list-style: none;
+}
+
+.layer-switcher li.group {
+    padding-top: 5px;
+}
+
+
+.layer-switcher li.group>label {
+    font-weight: bold;
+}
+
+.layer-switcher li {
+    position: relative;
+    margin-top: -0.6em;
+  }
+
+
+.layer-switcher li.layer {
+    display: table;
+}
+
+.layer-switcher li.layer label,
+.layer-switcher li.layer input {
+    display: table-cell;
+    vertical-align: sub;
+}
+
+.layer-switcher label.disabled {
+    opacity: 0.4;
+}
+
+.layer-switcher input {
+    margin: 6px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar {
+    width: 2px;
+}
+
+ 
+
+/** Popup */
+
+.ol-popup {
+    position: absolute;
+    min-width: 260px;
+    background-color: white;
+    -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    bottom: 10px;
+    left: -50px;
+    max-height: calc(50vh - 100px);
+   
+}
+
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+
+.ol-popup-closer:after {
+    color: red;
+    content: "✖";
+}
+.legend {
+    z-index: 6;
+      position: absolute;
+      bottom: 40px;
+      left: 10px;
+      margin: 0;
+      height: 216px;
+      width: 130px;
+      color: #503f3f;
+      border: 0;
+      transition: opacity 100ms ease-in;
+    padding: 6px 10px 6px 6px;
+    color: #000033;
+    background: #fff;
+    border-left:5px solid #666666;
+    border-right:5px solid #666666;
+    border-top:5px solid #666666;
+    border-bottom:5px solid #666666
+  }
+   
+   
+ 
+.map .ol-custom-overviewmap,
+  .map .ol-custom-overviewmap.ol-uncollapsible {
+    bottom: auto;
+    left: auto;
+    right: 0;
+    top: 0;
+  }
+
+  .map .ol-custom-overviewmap:not(.ol-collapsed)  {
+    border: 1px solid black;
+  }
+
+  .map .ol-custom-overviewmap .ol-overviewmap-map {
+    border: none;
+    width: 300px;
+  }
+
+  .map .ol-custom-overviewmap .ol-overviewmap-box {
+    border: 2px solid red;
+  }
+
+  .map .ol-custom-overviewmap:not(.ol-collapsed) button{
+    bottom: auto;
+    left: auto;
+    right: 1px;
+    top: 1px;
+  }
+
+  .map .ol-rotate {
+    top: 170px;
+    right: 0;
+  }
+    /*gishtml css*/
+    .legendclass {
+        display: inline-flex;
+        align-items: center;
+        z-index: 6;
+        position: absolute;
+        left: 10px;
+        margin-bottom: 10px;
+        height: 50px;
+        width: 150px;
+        padding: 1px 1px 1px 1px;
+        color: #000033;
+        background: #fff;
+        border: 0px solid #666666;
+        font-size: 10px;
+        margin-top: -255px;
+    }
+    .state{
+        height: 25px;
+        margin-left: 15px;
+        margin-right: 10px;
+       }
+
+/* legend head text*/
+   .leged{
+    background-color: orange;
+    color:white;
+    width:151px;
+    height:38px;
+    text-align: center;
+    margin-left:-1px;
+    margin-top:-8px;
+    font-size: 15px;
+    /* border-radius: 5px 5px 5px 5px; */
+    /*state and distric img size*/
+  }
+  .fst{
+    height: 60px;
+  }
+  /* legend button*/
+  .legedhldr{
+    z-index: 6;
+    position: absolute;
+    bottom: 16px;
+    left: 10px;
+    margin: 0;
+    height: 41px;
+    width: 42px;
+    color: #503f3f;
+    border: 4px solid #a39696;
+    border-radius: 5px 5px 5px 5px;
+    padding: 6px 10px 6px 6px;
+    background-color:white;
+  }
+ .btnlgd{
+    height:28px;
+    width:28px;
+    margin-left:-4px;
+    margin-top:-4px;
+    border: none;
+    background-repeat: no-repeat;
+   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMjBwdCIgaGVpZ2h0PSIyMHB0IiB2aWV3Qm94PSIwIDAgMTAzLjAwMDAwMCAxMTMuMDAwMDAwIgogcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwxMTMuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIgpmaWxsPSIjRTQ3OTMzIiBzdHJva2U9Im5vbmUiPgo8cGF0aCBkPSJNNDQ1IDEwNTYgYy03NSAtMjggLTE0NSAtMTI1IC0xNDUgLTIwMiAwIC00NyAzNCAtMTEyIDEyMSAtMjMzIDUxCi02OSA5NCAtMTI4IDk2IC0xMzAgNCAtNSAyIC03IDExOCAxNTMgNDcgNjYgOTAgMTM3IDk2IDE2MCAyNSA5MyAtMjMgMTk1Ci0xMTMgMjQyIC00NCAyMyAtMTI1IDI3IC0xNzMgMTB6IG0xNDMgLTg2IGM0OSAtMzAgNzQgLTc2IDY5IC0xMjkgLTE1IC0xNDIKLTE5NCAtMTc2IC0yNjAgLTUwIC0zNCA2NSAtNiAxNDYgNjQgMTgxIDQ1IDIzIDg2IDIzIDEyNyAtMnoiLz4KPHBhdGggZD0iTTIyNyA5MzIgYy0yMCAtMjEgLTM3IC00MiAtMzYgLTQ3IDAgLTYgMTMgLTIwIDMwIC0zMyAyNyAtMjIgMjkgLTIyCjI5IC01IDAgMTAgNiA0MiAxNCA3MSA3IDI5IDEwIDUyIDcgNTIgLTQgMCAtMjQgLTE3IC00NCAtMzh6Ii8+CjxwYXRoIGQ9Ik03NzUgOTI5IGM4IC0yMyAxNSAtNTUgMTUgLTcxIGwwIC0zMCAyOSAyNCBjMTcgMTMgMzAgMjggMzAgMzMgMSAxMgotNzAgODUgLTgxIDg1IC00IDAgLTEgLTE5IDcgLTQxeiIvPgo8cGF0aCBkPSJNOTYgODAxIGwtNDkgLTQ5IDM2IC00NCBjMjAgLTI0IDcyIC03NiAxMTYgLTExNyA0NSAtNDEgODEgLTgxIDgxCi04OCAwIC04IC00NCAtNTkgLTk3IC0xMTMgLTE1NCAtMTUzIC0xNDMgLTEzMSAtODkgLTE4NyBsNDYgLTQ4IDEzNCAxMzUgYzczCjc0IDEzOCAxMzYgMTQzIDEzNyA2IDIgMTYgLTQgMjMgLTEyIDEyIC0xNCAtNCAtMzQgLTEyNCAtMTU0IGwtMTM4IC0xMzkgNDYKLTQ4IDQ2IC00OSAxMjUgMTI1IDEyNiAxMjUgMTA3IC0xMTAgYzE0NyAtMTUxIDEzMCAtMTQzIDE4NyAtODkgbDQ3IDQ2IC0xMzgKMTM5IGMtMTE5IDExOSAtMTM2IDE0MCAtMTI1IDE1MyA4IDkgMTcgMTYgMjEgMTYgNCAwIDY4IC02MSAxNDMgLTEzNyBsMTM1Ci0xMzYgNDYgNDYgYzI1IDI2IDQ2IDQ5IDQ2IDUyIDAgMyAtNTUgNjAgLTEyMiAxMjYgbC0xMjEgMTIwIDEyMSAxMjAgYzY3IDY2CjEyMiAxMjQgMTIyIDEyOCAwIDUgLTIzIDI5IC01MCA1NSBsLTUwIDQ3IC02MCAtNTMgYy0zNiAtMzEgLTExMCAtMTIyIC0xODIKLTIyMCAtNjcgLTkzIC0xMjUgLTE2OCAtMTI5IC0xNjggLTQgMCAtNTkgNzMgLTEyMyAxNjMgLTc0IDEwNCAtMTM4IDE4MyAtMTgwCjIyMCAtMzYgMzEgLTY2IDU3IC02OCA1NyAtMiAwIC0yNiAtMjIgLTUyIC00OXoiLz4KPC9nPgo8L3N2Zz4K');
+ /* background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8Zz4KICA8cGF0aCBkPSJtMzA4LjI4IDI2OC4wMmgyNzcuMDRjNC43MzQ0IDAgOC41MjM0LTMuNzg5MSA4LjUyMzQtOC41MjM0cy0zLjc4OTEtOC41MjM0LTguNTIzNC04LjUyMzRoLTI3Ny4wNGMtNC43MzQ0IDAtOC41MjM0IDMuNzg5MS04LjUyMzQgOC41MjM0LTAuMDAzOTA2IDQuNzM0NCAzLjc4NTIgOC41MjM0IDguNTIzNCA4LjUyMzR6Ii8+CiAgPHBhdGggZD0ibTU4NC44NSAzNjMuMjFoLTI3Ni41N2MtNC43MzQ0IDAtOC41MjM0IDMuNzg5MS04LjUyMzQgOC41MjM0czMuNzg5MSA4LjUyMzQgOC41MjM0IDguNTIzNGgyNzcuMDRjNC43MzQ0IDAgOC41MjM0LTMuNzg5MSA4LjUyMzQtOC41MjM0cy00LjI2MTctOC41MjM0LTguOTk2MS04LjUyMzR6Ii8+CiAgPHBhdGggZD0ibTU4NC44NSA0NzQuOThoLTI3Ni41N2MtNC43MzQ0IDAtOC41MjM0IDMuNzg5MS04LjUyMzQgOC41MjM0czMuNzg5MSA4LjUyMzQgOC41MjM0IDguNTIzNGgyNzcuMDRjNC43MzQ0IDAgOC41MjM0LTMuNzg5MSA4LjUyMzQtOC41MjM0cy00LjI2MTctOC41MjM0LTguOTk2MS04LjUyMzR6Ii8+CiAgPHBhdGggZD0ibTI0Ni43MSAzMjcuMjJoLTcxLjk4NGMtNC43MzQ0IDAtOC41MjM0IDMuNzg5MS04LjUyMzQgOC41MjM0djcxLjk4NGMwIDQuNzM0NCAzLjc4OTEgOC41MjM0IDguNTIzNCA4LjUyMzRoNzEuOTg0YzQuNzM0NCAwIDguNTIzNC0zLjc4OTEgOC41MjM0LTguNTIzNHYtNzEuOTg0Yy0wLjQ3MjY2LTQuNzM0NC00LjI2MTctOC41MjM0LTguNTIzNC04LjUyMzR6bS04LjUyNzMgNzEuOTg0aC01NC45MzR2LTU1LjQxaDU1LjQxdjU1LjQxeiIvPgogIDxwYXRoIGQ9Im0xNzIuODQgMzAwLjIzaDczLjg3OWMyLjgzOTggMCA1LjY4MzYtMS40MjE5IDcuMTA1NS00LjI2MTcgMS40MjE5LTIuODM5OCAxLjQyMTktNS42ODM2IDAtOC41MjM0bC0zNi45MzgtNjMuOTM0Yy0xLjQyMTktMi4zNjcyLTQuMjYxNy00LjI2MTctNy4xMDU1LTQuMjYxNy0yLjgzOTggMC01LjY4MzYgMS40MjE5LTcuMTA1NSA0LjI2MTdsLTM2Ljk0MSA2NC40MDZjLTEuNDIxOSAyLjM2NzItMS40MjE5IDUuNjgzNiAwIDguNTIzNCAxLjQyMTkgMi44NDM4IDQuMjYxNyAzLjc4OTEgNy4xMDU1IDMuNzg5MXptMzYuOTM4LTU1LjQwNiAyMi4yNTggMzguODMyaC00NC45ODh6Ii8+CiAgPHBhdGggZD0ibTIxMi4xNCA0MzUuNjdjLTI2LjA0NyAwLTQ3LjM1OSAyMS4zMTItNDcuMzU5IDQ3LjM1OXMyMS4zMTIgNDcuMzU5IDQ3LjM1OSA0Ny4zNTkgNDcuMzU5LTIxLjMxMiA0Ny4zNTktNDcuMzU5LTIxLjMxMi00Ny4zNTktNDcuMzU5LTQ3LjM1OXptMCA3OC4xNDFjLTE3LjA1MSAwLTMwLjc4MS0xMy43MzQtMzAuNzgxLTMwLjc4MSAwLTE3LjA1MSAxMy43MzQtMzAuNzgxIDMwLjc4MS0zMC43ODEgMTcuMDUxIDAgMzAuNzgxIDEzLjczNCAzMC43ODEgMzAuNzgxIDAuMDAzOTA2IDE3LjA0Ny0xMy43MyAzMC43ODEtMzAuNzgxIDMwLjc4MXoiLz4KIDwvZz4KPC9zdmc+Cg==')  */
+
+}
+#collapse1{
+    overflow-y:scroll;
+    height:300px;
+}
+ /*next button*/
+ a {
+    text-decoration: none;
+    display: inline-block;
+    padding-left:10px;
+    padding-bottom:5px;
+    height: 18px;
+    width: 25px;
+    font-size: 13px;
+   }
+   a:hover {
+     background-color: #ddd;
+     color: black;
+   }
+
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+   }
+
+  .next {
+   background-color: #04AA6D;
+   color: white;
+   }

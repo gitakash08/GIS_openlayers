@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+	--decovery-sub-bg: #f3f3f3;
+	--decovery-header-logo: #b3b1b8;
+	--decovery-header-title: #6a6768;
+	--decovery-job-bg: #f7fcff;
+	--job-landing-p: #606060;
+	--dailog-header-bg: #dfe6f7;
+	--red: #f02e22;
+	--acumin-font: 'Acumin Pro', sans-serif;
+	--white: #ffff;
+	--black-900: #000000;
+	--black-800: #333;
+	--black-600: #180743;
+	--narrow-black: #231f20;
+	--gray-skill-50: #cdd1ea;
+	--gray-skill-100: #ecf4f4;
+	--border-color: #ebebeb;
+	--landing-bg-color: #e5e5e5;
+	--user-dashboard-bg: #e6e6e6;
+	--whatsapp: #29a71a;
+	--facebook: #3b5998;
+	--twitter: #55acee;
+	--linkedin: #0077b7;
+	--copy-link: #f3f4f6;
+	--star: #f9aa35;
+	--input-font: #444f84;
+	--input-border: #2c3565;
+	--filter-tag: #e9ebf5;
+	--skil-bg-blue: #202c68;
+	--faq-bg: #f4f5f9;
+	// Gray scale
+	--black-tran: rgba(29, 29, 29, 0.6);
+	--gray-50: #fafafa;
+	--gray-100: #f5f5f5;
+	--gray-200: #eeeeee;
+	--gray-300: #e0e0e0;
+	--gray-400: #bdbdbd;
+	--gray-500: #9e9e9e;
+	--gray-600: #757575;
+	--gray-700: #616161;
+	--gray-800: #424242;
+	--gray-900: #212121;
+	--gray-aadhaar-box: #f9f9f9;
+	--instuctor-card-bg: #f4f5f9;
+	--check-blue: #2196f3;
+	--skill-bg-color: #f8f9ff;
+	--skil-work-bg: #1e2654;
+	--client-work-flow: #ecfaff;
+	// Skillindia
+	--stepper-circle: #7e86af;
+	--skill-black: #11062f;
+	--disable-btn-bg: #fbecdf;
+	--disable-btn-color: #c3ad99;
+	--job-attributes: #f2f2f2;
+	--orange: #f07f22;
+	--orange-500: #fba45c;
+	--light-orange: #fef4ec;
+	--light-sky-blue: #f0faff;
+	--green: #029d4d;
+	--greenis-blue: #00a79e;
+	--apply-button-bg: #dcf1e6;
+	--apply-button-color: #388e61;
+	--light-green: #eaf7f7;
+	--sky-blue-300: #d8f2fe;
+	--navy-blue: #1e2755;
+	--brow-gray: #454142;
+	--footer-bg: #f7f9ff;
+	--blue-gray: #cfdde3;
+	--light-blue: #515a88;
+	--dark-purple: #746a8e;
+	--skill-gray-400: #f7f7f7;
+	--user-menu-nav: #0c0324;
+	--border-color: #dadada;
+	--skill-btn: linear-gradient(71.04deg, #f0821f 0.35%, #f8b92f 95.47%);
+	--filter-gray: grayscale(0%);
+	--stper-border-color: #e9e9e9;
+	--btn-botder-color: #dbdbdb;
+	--active-border-header: #f07f2273;
+	--card-trust: #eef7ff;
+	--card-finance: #e7fff3;
+	--card-discovery: #fff5ec;
+
+
+	--font-8: 8px;
+	--font-9: 9px;
+	--font-10: 10px;
+	--font-11: 11px;
+	--font-12: 12px;
+	--font-13: 13px;
+	--font-14: 14px;
+	--font-15: 15px;
+	--font-16: 16px;
+	--font-17: 17px;
+	--font-18: 18px;
+	--font-19: 19px;
+	--font-20: 20px;
+	--font-21: 21px;
+	--font-22: 22px;
+	--font-23: 23px;
+	--font-24: 24px;
+	--font-25: 25px;
+	--font-26: 26px;
+	--font-27: 27px;
+	--font-28: 28px;
+	--font-29: 29px;
+	--font-30: 30px;
+	--font-31: 31px;
+	--font-32: 32px;
+	--font-33: 33px;
+	--font-34: 34px;
+	--font-35: 35px;
+	--font-36: 36px;
+	--font-37: 37px;
+	--font-38: 38px;
+	--font-39: 39px;
+	--font-40: 40px;
+	--font-41: 41px;
+	--font-42: 42px;
+	--font-43: 43px;
+	--font-44: 44px;
+	--font-45: 45px;
+	--font-46: 46px;
+	--font-47: 47px;
+	--font-48: 48px;
+	--font-49: 49px;
+	--font-50: 50px;
+	--font-51: 51px;
+	--font-52: 52px;
+	--font-53: 53px;
+	--font-54: 54px;
+}
