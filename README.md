@@ -1,4 +1,6 @@
-# SIPGIS
+# SIPGIS & Dashboard with Data visulization and D![skiill-india](https://user-images.githubusercontent.com/73521189/187016269-f8443f19-c0f5-450e-ac50-6dcf75a3e66f.PNG)
+![dashboard](https://user-images.githubusercontent.com/73521189/187016284-ca7ca0c0-3c10-428d-bf83-5cb739ec52e3.PNG)
+ata Analytics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
 
